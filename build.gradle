@@ -1,21 +1,19 @@
 buildscript {
     repositories {
-        mavenCentral()
+        maven { url "https://maven.google.com" }
         jcenter()
+        google()
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:2.3.2'
+        classpath 'com.android.tools.build:gradle:3.2.1'
     }
 }
 apply plugin: 'com.android.application'
 
 android {
-
-    compileSdkVersion 24
-    buildToolsVersion '25.0.2'
-
+    compileSdkVersion 27
+    buildToolsVersion '28.0.3'
     useLibrary 'org.apache.http.legacy'
-
     buildTypes {
         debug {
             sourceSets {
@@ -44,24 +42,31 @@ android {
             }
         }
     }
-
     lintOptions {
         abortOnError false
     }
-
     packagingOptions {
         exclude 'META-INF/LICENSE'
         exclude 'META-INF/NOTICE'
+    }
+    defaultConfig {
+        minSdkVersion = 13
+        targetSdkVersion = 19
+        minSdkVersion 24
+        targetSdkVersion 24
+    }
+    productFlavors {
     }
 }
 
 repositories {
     mavenCentral()
+    google()
 }
 
 dependencies {
-    compile 'com.android.support:support-v4:24.0.0'
-    compile files('libs/slf4j-android-1.6.1-RC1.jar')
-    compile 'com.fasterxml.jackson.core:jackson-core:2.6.3'
-    compile 'com.fasterxml.jackson.core:jackson-databind:2.6.3'
+    implementation 'com.android.support:support-v4:27.0.0'
+    implementation files('libs/slf4j-android-1.6.1-RC1.jar')
+    implementation 'com.fasterxml.jackson.core:jackson-core:2.6.3'
+    implementation 'com.fasterxml.jackson.core:jackson-databind:2.6.3'
 }

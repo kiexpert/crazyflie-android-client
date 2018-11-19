@@ -4,10 +4,6 @@
     android:versionCode="16"
     android:versionName="0.7.1" >
 
-    <uses-sdk
-        android:minSdkVersion="13"
-        android:targetSdkVersion="19" />
-
     <uses-feature
         android:name="android.hardware.usb.host"
         android:required="false" />
@@ -24,6 +20,8 @@
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.DOWNLOAD_WITHOUT_NOTIFICATION" />
     <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
 
     <application
         android:allowBackup="true"
